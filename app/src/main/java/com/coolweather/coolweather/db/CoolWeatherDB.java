@@ -24,7 +24,9 @@ public class CoolWeatherDB {
     //将构造方法私有化
     private CoolWeatherDB(Context context){
         //创建数据库CoolWeatherOpenHelper的对象
+        //SQLiteOpenHelper构造器的参数(Context,数据库名字,Cursor(null),版本号)
         CoolWeatherOpenHelper dbHelper=new CoolWeatherOpenHelper(context,DB_NAME,null,VERSION);
+        //
         db=dbHelper.getWritableDatabase();
     }
 
@@ -42,6 +44,7 @@ public class CoolWeatherDB {
             ContentValues contentValues=new ContentValues();
             contentValues.put("province_name",province.getProvinceName());
             contentValues.put("province_code",province.getProvinceCode());
+            //insert(“表名”，null,ContentValues对象)
             db.insert("Province",null,contentValues);
         }
     }

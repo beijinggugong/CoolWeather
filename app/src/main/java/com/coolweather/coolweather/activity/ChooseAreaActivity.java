@@ -100,7 +100,7 @@ public class ChooseAreaActivity extends Activity {
                 dataList.add(province.getProvinceName());
             }
             adapter.notifyDataSetChanged();//notifyDataSetChanged():在修改适配器绑定的数组后，不用重新刷新Activity，通知Activity更新ListView
-            listView.setSelection(0);
+            listView.setSelection(0);//ListView.setSelection(position)，表示将列表移动到指定的Position处。
             titleText.setText("中国");
             currentLevel=LEVEL_PROVINCE;
         }else{
